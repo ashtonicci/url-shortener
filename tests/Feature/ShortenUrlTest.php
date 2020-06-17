@@ -37,7 +37,6 @@ class ShortenUrlTest extends TestCase
             'description' => 'this is a short link for google.com',
             'times_used' => 0,
         ]);
-        $response->assertOk();
-        $this->assertCount(1, Url::All());
+        $response->assertSessionHasErrors('full_url');
     }
 }
