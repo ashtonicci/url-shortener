@@ -19,13 +19,16 @@ $(document).ready(function () {
             },
             error: function (data) {
                 var errors = data.responseJSON.errors;
-                var errorsHtml = '<div class="alert alert-danger"><ul>';
+                var errorsHtml = '<div class="alert alert-danger form-validation-error"><ul>';
                 $.each(errors, function(key, value) 
                 {
                     errorsHtml += '<li>'+value[0]+'</li>';
                 });
                 errorsHtml += '</ul></div>'
-                $(errorsHtml).insertAfter('#url-form');
+                $(errorsHtml).insertAfter('#url-form .form-row');
+                setTimeout(function(){
+                    $('.form-validation-error').fadeOut('fast');
+                }, 3000);
             } 
         });
     });

@@ -10,6 +10,7 @@ header {
 h1 {
     font-size: 22pt !important;
     font-weight: bold !important;
+    color: #555;
 }
 
 a {
@@ -35,4 +36,8 @@ body {
     border-right: 1px solid;
     border-top: 1px solid;
     padding: 25px;
+}
+
+.form-validation-error {
+    margin-top: 5px;
 }
