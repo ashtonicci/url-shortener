@@ -18,10 +18,6 @@ class UrlController extends Controller
 
     public function insert(GenerateUrl $request)
     {
-        if (!substr( $request->full_url, 0, 7 ) === "http://" || "https://")
-        {
-            $request->full_url = "https://" . $request->full_url; 
-        } 
         Url::Create([
             'full_url' => $request->full_url,
             'short_url' => $this->generate_short_url(),
@@ -33,7 +29,7 @@ class UrlController extends Controller
 
     public function generate_short_url()
     {
-        $randomWord = 'tiara';
+        $randomWord = $this->generate_random_word();
         $shortUrl = url('/') . '/' . $randomWord;
         $urlWords = [];
         $url = Url::where('short_url', $shortUrl)->first();
