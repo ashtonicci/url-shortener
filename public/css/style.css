@@ -1,0 +1,38 @@
+#hallnet-logo {
+    height: 120px;
+}
+
+header {
+    background-color: #fff;
+    padding: 35px;
+}
+
+h1 {
+    font-size: 22pt !important;
+    font-weight: bold !important;
+}
+
+a {
+    color: #2979bc !important;
+    font-size: 18pt;
+    text-decoration: underline !important;
+}
+body {
+    background-color: #eee !important; 
+}
+.content {
+    padding: 0px 70px 0px 70px !important;
+}
+
+#url-form {
+    margin: 70px 0px 70px 0px;
+}
+
+.url-card {
+    background-color: #fff;
+    border-color: #000;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    padding: 25px;
+}
