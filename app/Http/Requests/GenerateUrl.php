@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Rules\NonShortenedUrl;
+use App\Rules\ValidUrl;
 
 class GenerateUrl extends FormRequest
 {
@@ -25,7 +26,7 @@ class GenerateUrl extends FormRequest
     public function rules()
     {
         return [
-            'full_url' => ['required', 'string', new NonShortenedUrl],
+            'full_url' => ['required', 'string', new NonShortenedUrl, new ValidUrl],
             'description' => ['max:140']
         ];
     }
