@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/urls', 'UrlController@insert');
+Route::patch('/urls/{url}', 'UrlController@visit');
 Route::get('/', 'UrlController@index');
 

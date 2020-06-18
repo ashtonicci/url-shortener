@@ -24,7 +24,14 @@ class UrlController extends Controller
             'description' => $request->description,
             'times_used' => 0
         ]);
-        return response()->json(['success'=>'success']);
+        return response()->json(['data'=>'success']);
+    }
+
+    public function visit(Url $url)
+    {
+        $url->increment('times_used');
+        $url->save();
+        return response()->json(['times_used'=>$url->times_used]);
     }
 
     public function generate_short_url()
