@@ -21,6 +21,9 @@ a {
 body {
     background-color: #eee !important; 
 }
+button body {
+    font-size: 14pt !important;
+}
 .content {
     padding: 0px 70px 0px 70px !important;
 }

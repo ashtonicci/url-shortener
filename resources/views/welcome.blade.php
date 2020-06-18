@@ -43,14 +43,17 @@
                 </form>
                 <h1>Recent Links</h1>
                 @foreach ($urls as $url)
-                    <div class="url-card">
+                    <div data-url-id="{{ $url->id }}" class="url-card">
                         <div class="d-block">
-                            <a href="{{ $url->full_url }}">{{ $url->short_url }}</a>
+                            <a class="shortened-url" href="{{ $url->full_url }}">{{ $url->short_url }}</a>
                         </div>
                         <div class="d-block">
                             <span>{{ $url->created_at->diffForHumans() }}</span>
                         </div>
+                        <div class="d-block">
                             <span>{{ $url->description }}</span>
+                        </div>
+                        <i>Times Accessed: <span class="times-used">{{ $url->times_used }}<span></i>
                     </div>
                 @endforeach
             </div>
@@ -59,5 +62,6 @@
     <footer>
         <script src="{{ asset('js/app.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/AjaxSubmitUrl.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/AjaxVisitUrl.js') }}"></script>
     </footer>
 </html>
